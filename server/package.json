@@ -1,10 +1,10 @@
 {
   "name": "uborrow",
-  "version": "0.0.1",
+  "version": "0.0.22",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=production node app.js",
-    "test": "NODE_ENV=test  mocha --recursive"
+    "start": "node app.js",
+    "test": "mocha --recursive"
   },
   "dependencies": {
     "express": "3.4.0",
