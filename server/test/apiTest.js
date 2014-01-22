@@ -26,6 +26,7 @@ describe('Makerapp API : ', function() {
                 if (err) {
                     throw err;
                 }
+                console.log("connected to test database");
                 return clearDB();
             });
         } else {

@@ -2,7 +2,7 @@
 /**
  * Module dependencies.
  */
-
+var mongoose = require('mongoose');
 var express = require('express');
 //var routes = require('./routes');
 var http = require('http');
@@ -24,12 +24,17 @@ app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+if ('production' == app.get('env')) {
+    mongoose.connect('mongodb://nodejitsu_phaggood:8t0quk4kl4lurnl60rok3th1el@ds061548.mongolab.com:61548/nodejitsu_phaggood_nodejitsudb2211351557');
+    console.log("connected to production database");
+};
+
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-var mongoose = require('mongoose');
+
 var Cabinet = mongoose.model('Cabinet', require('./models/cabinet').schema);
 var Item = mongoose.model('Item', require('./models/item').schema);
 
