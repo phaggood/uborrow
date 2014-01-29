@@ -1,0 +1,12 @@
+<!--
+  This template loads for the 'tab.cabinet-detail' state (app.js)
+  'cabinet' is a $scope variable created in the CabinetCtrl controller (controllers.js)
+  The CabinetCtrl pulls data from the Cabinets service (service.js)
+  The Cabinets service returns an array of cabinet data
+-->
+<view title="cabinet.name">
+  <content has-header="true" padding="true">
+    <p>{{ cabinet.description }}</p>
+    <p><a class="button button-small icon ion-arrow-left-b" href="#/tab/cabinets"> All Cabinets</a></p>
+  </content>
+</view>
