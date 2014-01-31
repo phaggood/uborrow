@@ -5,8 +5,21 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
+angular.module('starter', ['ionic','starter.services', 'starter.controllers','ngResource'])
 
+//.config(function(RestangularProvider) {
+//        RestangularProvider.setBaseUrl('http://uborrowapi.nodejitsu.com/uborrow');
+//})
+
+//.config(function(RestangularProvider) {
+//    RestangularProvider.setBaseUrl('http://uborrowapi.nodejitsu.com/uborrow');
+//})
+
+
+.config(function ( $httpProvider) {
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+ })
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -29,7 +42,7 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
           views: {
               'cabinets-tab': {
                   templateUrl: 'templates/cabinet-index.html',
-                  controller: 'CabinetIndexCrl'
+                  controller: 'CabinetController'
               }
           }
       })
@@ -39,7 +52,7 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
           views: {
               'cabinets-tab': {
                   templateUrl: 'templates/cabinet-detail.html',
-                  controller: 'CabinetDetailCtrl'
+                  controller: 'CabinetController'
               }
           }
       })
@@ -65,5 +78,6 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/home');
 
-});
+})
+
 

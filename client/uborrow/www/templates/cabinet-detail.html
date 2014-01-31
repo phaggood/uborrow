@@ -4,9 +4,16 @@
   The CabinetCtrl pulls data from the Cabinets service (service.js)
   The Cabinets service returns an array of cabinet data
 -->
-<view title="cabinet.name">
+<view>
   <content has-header="true" padding="true">
-    <p>{{ cabinet.description }}</p>
-    <p><a class="button button-small icon ion-arrow-left-b" href="#/tab/cabinets"> All Cabinets</a></p>
+      <div class="item item-divider">
+          {{cabinet.name}}
+      </div>
+      <div class="item item-text-wrap">
+          <p>{{ cabinet.description }}</p>
+      </div>
+      <div class="item item-divider">
+          <p><a class="button button-small icon ion-arrow-left-b" href="#/tab/cabinets"> Back</a></p>
+      </div>
   </content>
 </view>
