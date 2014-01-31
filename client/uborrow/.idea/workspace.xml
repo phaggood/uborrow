@@ -25,7 +25,7 @@
     <file path="/index.html" changelist="44128856-10c1-42ec-b7d4-fe56d0f87190" time="1391168377193" ignored="false" />
     <file path="$PROJECT_DIR$/../../server/models/item.js" changelist="44128856-10c1-42ec-b7d4-fe56d0f87190" time="1391105108093" ignored="false" />
     <file path="/item.js" changelist="44128856-10c1-42ec-b7d4-fe56d0f87190" time="1391093931889" ignored="false" />
-    <file path="$PROJECT_DIR$/../../server/app.js" changelist="44128856-10c1-42ec-b7d4-fe56d0f87190" time="1391177434986" ignored="false" />
+    <file path="$PROJECT_DIR$/../../server/app.js" changelist="44128856-10c1-42ec-b7d4-fe56d0f87190" time="1391178038016" ignored="false" />
     <file path="/apiTest.js" changelist="44128856-10c1-42ec-b7d4-fe56d0f87190" time="1391104877504" ignored="false" />
     <file path="$PROJECT_DIR$/../../server/test/apiTest.js" changelist="44128856-10c1-42ec-b7d4-fe56d0f87190" time="1391104963198" ignored="false" />
     <file path="$PROJECT_DIR$/../../server/handlers/cabinetHandler.js" changelist="44128856-10c1-42ec-b7d4-fe56d0f87190" time="1391105064420" ignored="false" />
@@ -41,6 +41,7 @@
     <file path="$PROJECT_DIR$/../../../../Lab/codemisample/androidmtg/dist/config.ios.xml" changelist="44128856-10c1-42ec-b7d4-fe56d0f87190" time="1391128827414" ignored="false" />
     <file path="$PROJECT_DIR$/../../../../Lab/codemisample/androidmtg/dist/config.android.xml" changelist="44128856-10c1-42ec-b7d4-fe56d0f87190" time="1391128827414" ignored="false" />
     <file path="$PROJECT_DIR$/../../../../Lab/codemisample/androidmtg/www/index.html" changelist="44128856-10c1-42ec-b7d4-fe56d0f87190" time="1391128789933" ignored="false" />
+    <file path="$PROJECT_DIR$/../../server/package.json" changelist="44128856-10c1-42ec-b7d4-fe56d0f87190" time="1391178055401" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

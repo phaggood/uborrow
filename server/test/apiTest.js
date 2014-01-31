@@ -116,7 +116,7 @@ describe('Makerapp API : ', function() {
     describe(' -- cabinet api -- ', function() {
         var cd = testData.cabinetData;
 
-        it("should return 202 cabinet created item via post to /uborrow/cabinets", function(done){
+        it.only("should return 202 cabinet created item via post to /uborrow/cabinets", function(done){
             var url = "/uborrow/cabinets"
             request(app)
                 .post(url)
@@ -177,6 +177,8 @@ describe('Makerapp API : ', function() {
             });
         });
 
+        it('should reject unauthorized user');
+
         it('should return 200 from get request /uborrow/cabinets', function(done){
             async.parallel([
                 function(cb) {
@@ -221,7 +223,7 @@ describe('Makerapp API : ', function() {
     });
 
     describe(' -- itema api --', function() {
-        var itd = testData.itemData;
+            var itd = testData.itemData;
 
         it('should return 200 and expected item from /uborrow/item/:id', function(done){
             new Item(itd.availableTrialItem1).save(function(err, item) {

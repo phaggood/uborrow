@@ -267,9 +267,9 @@ describe('Items Models:', function(){
 
             ],
 
-                function(err, results){
+            function(err, results){
                     results.should.have.length(4);
-                });
+            });
             done();
         });
     });

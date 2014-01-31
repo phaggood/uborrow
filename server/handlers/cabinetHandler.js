@@ -23,8 +23,10 @@ module.exports = function (Cabinet) {
         var action = req.body.action;
 
         if (action==="add"){
+            console.log("ADDING CABINET - " + req.body.cabinet.name);
             Cabinet.newCabinet(req.body.cabinet,function(err,cabinet){
                 if (err) return res.json(401,err);
+                console.log("Cabinet posted wiht desc " + req.body.cabinet.description) ;
                 res.json(201,cabinet);
             })
         }

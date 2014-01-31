@@ -131,14 +131,12 @@ describe('Cabinet Models: ', function(){
     it("should return authorized borrower ", function(done){
 
         async.waterfall([
-            //Load user to get userId first
             function(callback) {
                 Cabinet.newCabinet(cd.newCabinet, function(err, cabinet){
                     if (err)  callback(err);
                     callback(null,cabinet);
                 });
             },
-            //Load posts (won't be called before task 1's "task callback" has been called)
             function(cabinet,callback) {
                 Cabinet.isAuthorizedBorrower(cabinet._id, "imatest", function(err, borrower){
                     if (err) callback(err);

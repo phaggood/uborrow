@@ -17,6 +17,8 @@ module.exports = function (Item) {
         var action = req.body.action;
 
         if (action==="add"){
+            //console.log("\nHEADERS - item:" + req.body.item + " action:" + req.body.action)
+            //console.log("ADDING ITEM");
             Item.createItem(req.body.item, function(err,item){
                 if (err) return res.json(401,err);
                 res.json(202,item);

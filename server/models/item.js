@@ -43,6 +43,7 @@ itemSchema.statics.deactivate = function(id, closeDate, cb) {
 };
 
 itemSchema.statics.createItem = function(item, cb) {
+    //console.log("Adding item " + item);
     var itemModel = mongoose.model("Item");
     new itemModel(item).save( function (err, newItem){
         if (err)  cb(err, null);
