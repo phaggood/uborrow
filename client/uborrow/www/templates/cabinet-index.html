@@ -6,7 +6,7 @@
 <view title="'Cabinet Information'">
   <content has-header="true" has-tabs="true">
     <list>
-      <item ng-repeat="cabinet in cabinets" type="item-text-wrap" href="#/tab/cabinet/{{cabinet.id}}">
+      <item ng-repeat="cabinet in data.cabinets" type="item-text-wrap" href="#/tab/cabinet/{{cabinet.id}}">
         <h3>{{cabinet.title}}</h3>
         <p>{{cabinet.description}}</p>
         </item>
