@@ -56,13 +56,14 @@ app.get('/', function(req,res) {
 //app.post('/cabinets/items', handlers.cabinet.processItem(Item));  // createItem, add/remvoe from cabinet
 
 app.get('/uborrow/cabinets', handlers.cabinet.getCabinets);
-app.get('/uborrow/cabinets/:cabinetid/items', handlers.items.getCabinetItems);
-app.get('/uborrow/cabinets/:id', handlers.cabinet.getCabinetById);
-app.get('/uborrow/items/:id', handlers.items.getItemById);
-
 app.post('/uborrow/cabinets', handlers.cabinet.processCabinet);
-app.post('/uborrow/cabinets/:cabinetid/items', handlers.items.processCabinetItem);
+app.get('/uborrow/cabinets/:id', handlers.cabinet.getCabinetById);
+
+app.get('/uborrow/items/:id', handlers.items.getItemById);
 app.post('/uborrow/items', handlers.items.processItem);
+
+app.get( '/uborrow/cabinets/:cabinetid/items', handlers.items.getCabinetItems);
+app.post('/uborrow/cabinets/:cabinetid/items', handlers.items.processCabinetItem);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

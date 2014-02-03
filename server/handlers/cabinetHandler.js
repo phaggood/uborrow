@@ -48,7 +48,6 @@ module.exports = function (Cabinet) {
         if (action === undefined) {
             res.json(400,errorsMsgs.badItemRequest);
         }
-
     }
 
 
