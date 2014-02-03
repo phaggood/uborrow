@@ -6,14 +6,36 @@
 -->
 <view>
   <content has-header="true" padding="true">
-      <div class="item item-divider">
-          {{cabinet.name}}
-      </div>
-      <div class="item item-text-wrap">
-          <p>{{ cabinet.description }}</p>
-      </div>
-      <div class="item item-divider">
-          <p><a class="button button-small icon ion-arrow-left-b" href="#/tab/cabinets"> Back</a></p>
+      <div class="list card">
+          <div class="item item-avatar">
+              <img src="">
+              <h2>{{data.currentCabinet.name}}</h2>
+          </div>
+          <div class="item item-body">
+              <img  height="200" width="100" src="img/metal_cabinet.jpg">
+              <p>
+                  {{data.currentCabinet.description}}
+              </p>
+              <p>
+                  <a href="#" class="subdued">5 Items Checked Out</a>
+                  <a href="#" class="subdued">10 Items Available</a>
+              </p>
+          </div>
+          <div class="item tabs tabs-secondary tabs-icon-left">
+              <a class="tab-item" href="#">
+                  <i class="icon ion-thumbsup"></i>
+                  Items
+              </a>
+              <a class="tab-item" href="#">
+                  <i class="icon ion-chatbox"></i>
+                  Borrowers
+              </a>
+              <a class="tab-item" href="#/tab/cabinets">
+                  <i class="icon ion-share"></i>
+                  Back
+              </a>
+          </div>
+
       </div>
   </content>
 </view>

@@ -42,7 +42,7 @@ angular.module('starter', ['ionic','starter.services', 'starter.controllers','ng
           views: {
               'cabinets-tab': {
                   templateUrl: 'templates/cabinet-index.html',
-                  controller: 'CabinetController'
+                  controller: 'CabinetsController'
               }
           }
       })
@@ -52,10 +52,21 @@ angular.module('starter', ['ionic','starter.services', 'starter.controllers','ng
           views: {
               'cabinets-tab': {
                   templateUrl: 'templates/cabinet-detail.html',
-                  controller: 'CabinetController'
+                  controller: 'CabinetDetailController'
               }
           }
       })
+
+      .state('tab.item-detail', {
+          url: '/item/:itemid',
+          views: {
+              'item-detail-tab': {
+                  templateUrl: 'templates/item-detail.html',
+                  controller: 'ItemDetailController'
+              }
+          }
+      })
+
 
       .state('tab.home', {
           url: '/home',

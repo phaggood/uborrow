@@ -1,29 +1,5 @@
 angular.module('starter.services', [])
 
-/**
- * A simple example service that returns some data.
- */
-/*
-    .factory('CabinetService', function() {
-        var cabinets = [
-            { id: 0, name: 'cabinet1', description: 'Matthai cabinet' },
-            { id: 1, name: 'cabinet2', description: 'UM Detroit Lobby' },
-            { id: 2, name: 'cabinet3', description: 'Art Museum' },
-            { id: 3, name: 'cabinet4', description: 'Nature Center cabinet' }
-        ];
-
-        return {
-            all: function() {
-                return cabinets;
-            },
-            get: function(id) {
-                // Simple index lookup
-                return cabinets[id];
-            }
-        }
-    });
-*/
-
 .factory("flashService", function($rootScope) {
     return {
         show: function(message) {
@@ -37,9 +13,42 @@ angular.module('starter.services', [])
 })
 
 .factory('Cabinets', function($resource){
-    return $resource('http://uborrowapi.nodejitsu.com/uborrow/cabinets', {})
+        var Cabinet = $resource('http://uborrowapi.nodejitsu.com/uborrow/cabinets/:cabinetid', {cabinetid:'@id'});
+        Cabinet.get({cabinetid:123}, function() {
+            user.abc = true;
+            user.$save();
+        });
+
+
+        return $resource(
+            "http://uborrowapi.nodejitsu.com/uborrow/cabinets/:cabinetid",
+            {cabinetid: "@id" },
+            {
+                query: {method:'GET', isArray:true},
+                add: {method:'POST', params:{action:'add'}},
+                revokeBorrower: {method:'POST', params:{action:'revoke'}},
+                grantBorrower: {method:'POST', params:{action:'grant'}}
+            }
+        );
 })
 
+.factory('CabinetItems', function($resource){
+        return $resource('http://uborrowapi.nodejitsu.com//uborrow/cabinets/:cabinetid/items',
+            {
+                retire: {method:'POST', params:{action:'close'}},
+                addToCabinet : {method:'POST', params: {action:'add'}}
+            }
+        )
+    })
+
+.factory('Items', function($resource){
+        return $resource('http://uborrowapi.nodejitsu.com/uborrow/cabinets',
+            {
+                retire: {method:'POST', params:{action:'close'}},
+                addToCabinet : {method:'POST', params: {action:'add'}}
+            }
+        )
+})
 
 .value('version', '0.1');
 
@@ -83,3 +92,4 @@ angular.module('starter.services', [])
 
     return factory;
 });*/
+
