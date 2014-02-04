@@ -3,14 +3,16 @@
   It was wired up in the app config (app.js) 
   The 'pets' data comes from its $scope within PetIndexCtrl (controller.js)
 -->
-<view title="'Cabinet Information'">
+<view>
   <content has-header="true" has-tabs="true">
     <list>
-      <item ng-repeat="cabinet in data.cabinets" type="item-text-wrap" href="#/tab/cabinet/{{cabinet._id}}">
+      <item ng-repeat="cabinet in data.cabinets" type="item-text-wrap" href="#/cabinet/{{cabinet._id}}">
         <h3>{{cabinet.title}}</h3>
         <p>{{cabinet.description}}</p>
         </item>
       </item>
     </list>
+      <a href="#/cabinets/add">Create Cab</a>
+
   </content>
 </view>

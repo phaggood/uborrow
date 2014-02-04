@@ -4,9 +4,23 @@
   The CabinetCtrl pulls data from the Cabinets service (service.js)
   The Cabinets service returns an array of cabinet data
 -->
-<view title="cabinet.name">
-  <content has-header="true" padding="true">
-    <p>{{ cabinet.description }}</p>
-    <p><a class="button button-small icon ion-arrow-left-b" href="#/tab/cabinets"> All Cabinets</a></p>
-  </content>
+<view>
+    <content has-header="true" padding="true">
+        <form name="saveTemplateData" ng-submit="saveCabinet()">
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input type="text" name="title" placeholder="Title"/>
+                </label>
+                <label class="item item-input">
+                    <textarea name="description" rows="3" cols="25" placeholder="Description"></textarea>
+                </label>
+                <button type="submit" class="btn btn-success btn-lg btn-block">
+                    <span class="glyphicon glyphicon-flash"></span> Save
+                </button>
+            </div>
+        </form>
+        <p ng-show="savemessage">
+            <label>Cabinet Saved</label>
+        </p>
+    </content>
 </view>

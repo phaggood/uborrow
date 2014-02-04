@@ -8,6 +8,7 @@ var mongoose = require('mongoose')
 var cabinetSchema = new Schema({
     name:  String,
     description: String,
+    owner : String,
     thumbnail : Buffer,
     authorizedBorrowers : [],
     defaultCheckout : {type : Number, default: 0} // default checkout mins = no time

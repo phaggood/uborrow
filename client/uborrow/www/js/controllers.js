@@ -5,16 +5,39 @@ angular.module('starter.controllers', [])
     .controller('CabinetsController', function($scope,  Cabinets) {
         // Instantiate an object to store your scope data in (Best Practices)
         $scope.data = {
-            cabinets: []
+            cabinets: [],
+            savemessage : false
         };
 
-        Cabinets.query(function(response) {
-            // Assign the response INSIDE the callback
-            $scope.data.cabinets = response;
-        });
+        $scope.getCabinets = function() {
+            Cabinets.query(function(response) {
+                // Assign the response INSIDE the callback
+                $scope.data.cabinets = response;
+            });
+        }
+
+
+        var formData = {
+            title: "Title",
+            description: "Description"
+        };
+
+        $scope.saveCabinet = function() {
+            var cabinet = new Cabinets(formData);
+            cabinet.action = "add";
+            cabinet.$save(function(){
+                $scope.savemessage = true;
+            });
+        };
+
+        $scope.getCabinets();
+
+
     })
 
     .controller('CabinetDetailController', function($scope, $stateParams, Cabinets) {
+
+
         $scope.data = {
             currentCabinet : {},
             availableToggle: false,  // boolean to only show items that are available
@@ -29,6 +52,7 @@ angular.module('starter.controllers', [])
                 $scope.data.currentCabinet = response;
             });
         };
+
 
         $scope.setCurrentCabinet($stateParams.id);
 

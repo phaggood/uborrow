@@ -29,12 +29,14 @@ angular.module('starter', ['ionic','starter.services', 'starter.controllers','ng
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-    // setup an abstract state for the tabs directive
-    .state('tab', {
-      url: "/tab",
-      abstract: true,
-      templateUrl: "templates/tabs.html"
-    })
+      // setup an abstract state for the tabs directive
+      .state('tab', {
+          url: "/tab",
+          abstract: true,
+          templateUrl: "templates/tabs.html"
+      })
+
+
 
       // the pet tab has its own child nav-view and history
       .state('tab.cabinet-index', {
@@ -43,16 +45,6 @@ angular.module('starter', ['ionic','starter.services', 'starter.controllers','ng
               'cabinets-tab': {
                   templateUrl: 'templates/cabinet-index.html',
                   controller: 'CabinetsController'
-              }
-          }
-      })
-
-      .state('tab.cabinet-detail', {
-          url: '/cabinet/:id',
-          views: {
-              'cabinets-tab': {
-                  templateUrl: 'templates/cabinet-detail.html',
-                  controller: 'CabinetDetailController'
               }
           }
       })
@@ -67,7 +59,6 @@ angular.module('starter', ['ionic','starter.services', 'starter.controllers','ng
           }
       })
 
-
       .state('tab.home', {
           url: '/home',
           views: {
@@ -77,17 +68,30 @@ angular.module('starter', ['ionic','starter.services', 'starter.controllers','ng
           }
       })
 
-    .state('tab.about', {
-      url: '/about',
-      views: {
-        'about-tab': {
-          templateUrl: 'templates/about.html'
-        }
-      }
-    });
+      .state('tab.about', {
+          url: '/about',
+          views: {
+              'about-tab': {
+                  templateUrl: 'templates/about.html'
+              }
+          }
+      })
 
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/home');
+      .state('cabinet-detail', {
+          url: '/cabinet/:id',
+          templateUrl: 'templates/cabinet-detail.html',
+          controller: 'CabinetDetailController'
+
+      })
+
+      .state('cabinet-add', {
+          url: "/cabinets/add",
+          templateUrl: 'templates/cabinet-add.html',
+          controller: 'CabinetsController'
+      });
+
+      // if none of the above states are matched, use this as the fallback
+      $urlRouterProvider.otherwise('/tab/home');
 
 })
 

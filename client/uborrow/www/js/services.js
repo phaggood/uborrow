@@ -13,13 +13,6 @@ angular.module('starter.services', [])
 })
 
 .factory('Cabinets', function($resource){
-        var Cabinet = $resource('http://uborrowapi.nodejitsu.com/uborrow/cabinets/:cabinetid', {cabinetid:'@id'});
-        Cabinet.get({cabinetid:123}, function() {
-            user.abc = true;
-            user.$save();
-        });
-
-
         return $resource(
             "http://uborrowapi.nodejitsu.com/uborrow/cabinets/:cabinetid",
             {cabinetid: "@id" },
